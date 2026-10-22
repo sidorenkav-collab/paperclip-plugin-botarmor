@@ -1,6 +1,6 @@
 {
   "name": "paperclip-plugin-botarmor",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "BotArmor Gate for Paperclip: red-team audits of agents' instructions on hire, creation and change, reported as issue comments.",
   "type": "module",
   "license": "MIT",

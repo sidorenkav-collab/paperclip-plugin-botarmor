@@ -46,6 +46,19 @@ fingerprint of the instructions; test conversations are kept 90 days, then redac
    - **Minimum grade** (default B), **Report language** (en, fr, de, es, ru);
    - which triggers to use, and optionally an **Issue for results** without a linked issue.
 
+## Good to know
+
+- **Level 13 (agent with hands)** runs when the agent has skills: Paperclip exposes no tool list to plugins, so the
+  agent's skill names stand in for its tools, with a risk class guessed from each name.
+- **The `botarmor_audit` tool** is called from a real agent run. Paperclip checks that the run belongs to the
+  company, so `paperclipai plugin tool:execute` with a made-up `runId` is refused (HTTP 403).
+- **Hires by the board** (not by an agent) are matched to their issue by scanning the company's 50 most recent
+  issues for the approval. If none is found, the result goes to the *Issue for results* setting.
+- **Windows:** keep Paperclip's data directory on a short path (for example `paperclipai run --data-dir C:\pc`).
+  On a deep path its SQLite lock file cannot be opened and saving secrets fails with HTTP 500.
+- Tested with Paperclip 2026.1012.0: a board hire started a prompt-only audit and the result was commented on the
+  hire issue (grade, failed levels, patches, verification link).
+
 ## Develop
 
 ```bash

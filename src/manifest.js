@@ -2,7 +2,7 @@
 export default {
   id: "botarmor-gate",
   apiVersion: 1,
-  version: "0.1.0",
+  version: "0.1.1",
   displayName: "BotArmor Gate",
   description:
     "Red-team audits of your agents' instructions with BotArmor: on every hire approval, on new agents and when instructions change. Posts the grade, failed attack levels and ready-to-paste patches as an issue comment. Informs the board; never blocks.",
