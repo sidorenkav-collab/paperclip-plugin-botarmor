@@ -1,0 +1,45 @@
+{
+  "name": "paperclip-plugin-botarmor",
+  "version": "0.1.0",
+  "description": "BotArmor Gate for Paperclip: red-team audits of agents' instructions on hire, creation and change, reported as issue comments.",
+  "type": "module",
+  "license": "MIT",
+  "author": "BotArmor AI (Rhone IA)",
+  "homepage": "https://github.com/sidorenkav-collab/paperclip-plugin-botarmor#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sidorenkav-collab/paperclip-plugin-botarmor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sidorenkav-collab/paperclip-plugin-botarmor/issues"
+  },
+  "keywords": [
+    "paperclip",
+    "paperclip-plugin",
+    "ai-agents",
+    "red-team",
+    "security",
+    "botarmor"
+  ],
+  "engines": {
+    "node": ">=24.11"
+  },
+  "files": [
+    "dist/*.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "paperclipPlugin": {
+    "manifest": "./dist/manifest.js",
+    "worker": "./dist/worker.js"
+  },
+  "scripts": {
+    "build": "node esbuild.config.mjs",
+    "test": "node --test test/*.test.mjs",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "devDependencies": {
+    "@paperclipai/plugin-sdk": "2026.1012.0",
+    "esbuild": "^0.25.0"
+  }
+}
